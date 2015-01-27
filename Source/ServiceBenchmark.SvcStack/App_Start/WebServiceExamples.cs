@@ -1,30 +1,18 @@
-using System;
-using System.Linq;
-using System.Configuration;
-using System.Collections.Generic;
-using ServiceStack.Configuration;
-using ServiceStack.OrmLite;
-using ServiceStack.OrmLite.SqlServer;
-using ServiceStack.ServiceInterface;
-using ServiceStack.ServiceInterface.Auth;
-using ServiceStack.ServiceInterface.ServiceModel;
-using ServiceStack.WebHost.Endpoints;
+using ServiceStack;
 using ServiceBenchmark.Common;
 
 namespace ServiceBenchmark.SvcStack
 {
-    #region Item Service
 
-    public class ItemService : ServiceBase<ItemRequest>
+    public class ItemService : Service
     {
-        protected override object Run(ItemRequest request)
+        public object Any(ItemRequest request)
         {
             return new ItemResponse
             {
-                Item = new Item(request.ItemID, "Made in ServiceStack")
+                Item = new Item(request.ItemId, "Made in ServiceStack")
             };
         }
     }
-
-    #endregion
 }
+

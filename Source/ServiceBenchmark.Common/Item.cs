@@ -1,19 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace ServiceBenchmark.Common
 {
     public class Item
     {
-        public Guid ItemID { get; set; }
+        public Guid ItemId { get; set; }
         public string Description { get; set; }
         public DateTime ModifiedAt { get; set; }
 
-        public Item(Guid itemID, string description)
+        public Item(Guid itemId, string description)
         {
-            this.ItemID = itemID;
+            this.ItemId = itemId;
             this.Description = description;
             this.ModifiedAt = DateTime.UtcNow;
         }
@@ -21,7 +18,7 @@ namespace ServiceBenchmark.Common
 
     public class ItemRequest
     {
-        public Guid ItemID { get; set; }
+        public Guid ItemId { get; set; }
     }
 
     public class ItemResponse
