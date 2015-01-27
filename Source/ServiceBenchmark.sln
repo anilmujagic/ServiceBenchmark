@@ -3,13 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A708C636-311B-4B80-B5FF-E5F5B6ED7789}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceBenchmark", "ServiceBenchmark\ServiceBenchmark.csproj", "{5B8E8CB2-AAA4-49DE-9A00-85EA7D770DD2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceBenchmark.WebApi", "ServiceBenchmark.WebApi\ServiceBenchmark.WebApi.csproj", "{4BC9E1A0-F4ED-4139-9B98-FD055B8ECAB1}"
