@@ -3,6 +3,7 @@ using ServiceStack;
 using System;
 using System.Diagnostics;
 using System.Net.Http;
+using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 
 namespace ServiceBenchmark
@@ -67,6 +68,7 @@ namespace ServiceBenchmark
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
 
+            var mediaTypeFormatterCollection = new MediaTypeFormatterCollection();
             ExecuteAction(NumberOfRequestsToSend + " requests to api/item/id", () =>
             {
                 for (int i = 0; i < NumberOfRequestsToSend; i++)
@@ -74,7 +76,7 @@ namespace ServiceBenchmark
                     var response = client.GetAsync("api/item/" + Guid.NewGuid()).Result;
                     if (response.IsSuccessStatusCode)
                     {
-                        var item = response.Content.ReadAsAsync<Item>().Result;
+                        var item = response.Content.ReadAsAsync<Item>(mediaTypeFormatterCollection).Result;
                         if (item == null)
                             throw new Exception("Item not received.");
                         //Console.WriteLine("ItemID\t\t{0}\nDescription\t{1}\nModifiedAt\t{2}", item.ItemID, item.Description, item.ModifiedAt);
